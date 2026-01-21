@@ -7,7 +7,7 @@ The project is built with **Python**, **Telegram Bot API**, and **PostgreSQL**.
 
 ---
 
-## 🚀 Features
+## Features
 
 - Add sleep records:
   - sleep time
@@ -22,7 +22,7 @@ The project is built with **Python**, **Telegram Bot API**, and **PostgreSQL**.
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Python 3.10+**
 - **pyTelegramBotAPI (telebot)**
@@ -33,27 +33,27 @@ The project is built with **Python**, **Telegram Bot API**, and **PostgreSQL**.
 
 ---
 
-## ⚙️ Setup & Installation
+## Setup & Installation
 
-### 1️⃣ Clone the repository
-
-```
-git clone https://github.com/your-username/sleepbot.git
-cd sleepbot
-```
-
-2️⃣ Create and activate virtual environment
-```
-python -m venv venv
-```
-
-3️⃣ Install dependencies
+### 1️. Clone the repository
 
 ```
-pip install -r requirements.txt
+$ git clone https://github.com/your-username/sleepbot.git
+$ cd sleepbot
 ```
 
-## 🤖 Telegram Bot Setup
+### 2️. Create and activate virtual environment
+```
+$ python -m venv venv
+```
+
+### 3️. Install dependencies
+
+```
+$ pip install -r requirements.txt
+```
+
+## Telegram Bot Setup
 
 - Create a bot via @BotFather
 
@@ -63,7 +63,7 @@ pip install -r requirements.txt
     export TELEGRAM_API_KEY=your_token_here
     Or use a .env file if preferred.
 
-## 🗄 Database Setup (IMPORTANT)
+## Database Setup (IMPORTANT)
 
 ⚠️ Note on PostgreSQL 
 Tables, indexes, and SQL functions were created directly inside PostgreSQL
@@ -87,7 +87,7 @@ select_query = 'SELECT * FROM get_records_by_date(%s, %s)'
 cursor.execute(select_query, (user_id, date))
 ```
 
-## 📌 Database Connection
+## Database Connection
 
 Configure your PostgreSQL credentials in .env
 
@@ -103,13 +103,13 @@ conn = psycopg2.connect(
         )
 ```
 
-## ▶️ Run the Bot
+## Run the Bot
 
 ```
 python run.py
 ```
 
-## 🧠 Architectural Notes
+## Architectural Notes
 Handlers are registered via side-effect imports in run.py
 
 Each handler module registers commands using decorators
@@ -124,7 +124,7 @@ Database logic is isolated from Telegram handlers
 - No migrations or schema versioning
 - In-memory session storage (lost on restart)
 
-## Possible Improvements (Planned)
+## Improvements (Planned)
 - Add more tests: helper functions, mock tests
 - Database & Architecture: Store PostgreSQL functions in .sql files inside the repository
 - Code Structure: reduce handler duplication, improve readability and connectivity
