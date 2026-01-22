@@ -5,6 +5,9 @@ record sleep and wake times, sleep quality, notes, and view or manage past recor
 
 The project is built with **Python**, **Telegram Bot API**, and **PostgreSQL**.
 
+*NOTE:* This project was used primarily for practice and experimentation — working with PostgreSQL queries, database connections, tests, decorators, and error handling. As a result, some parts of the codebase may differ in style or structure.
+
+
 ---
 
 ## 🚀 Features
@@ -19,6 +22,7 @@ The project is built with **Python**, **Telegram Bot API**, and **PostgreSQL**.
 - Delete records
 - Basic sleep statistics
 - Multi-step user interaction via Telegram bot handlers
+- *Bot and comments are written in Russian
 
 ---
 
