@@ -19,6 +19,7 @@ import handlers.notes
 import handlers.show
 import handlers.delete
 import handlers.sleep
+import handlers.fallback
 
 # --- Переменные окружения ---
 TOKEN = os.getenv('TELEGRAM_API_KEY')
