@@ -1,5 +1,4 @@
 import telebot
-from telebot import TeleBot
 import os
 from dotenv import load_dotenv
 

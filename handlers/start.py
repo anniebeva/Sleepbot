@@ -1,5 +1,5 @@
 from bot import bot
-from database import add_user
+from db import add_user
 from telebot import types
 from telebot.types import Message
 

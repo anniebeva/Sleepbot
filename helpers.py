@@ -1,5 +1,5 @@
 import datetime
-from database import extract_records_by_date
+from db import extract_records_by_date
 
 
 def format_date_for_output(date_input) -> str | None:

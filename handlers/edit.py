@@ -6,7 +6,7 @@ from functools import partial
 
 from .handlers_validators import record_not_found_error_bot, wrong_time_format_error_bot, \
     wrong_date_format_error_bot, find_record_by_number, validate_num_input_bot, return_to_start
-from database import update_record
+from db import update_record
 from helpers import load_records_by_date
 from errors_validators import parse_user_time, parse_user_date
 

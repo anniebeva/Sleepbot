@@ -4,7 +4,7 @@ from telebot.types import Message
 
 from .handlers_validators import return_to_start
 from .sleep import add_sleep_rec_to_db_get_id
-from database import add_note
+from db import add_note
 
 
 @bot.message_handler(commands=['notes'])

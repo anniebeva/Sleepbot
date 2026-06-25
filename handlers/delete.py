@@ -7,7 +7,7 @@ from helpers import load_records_by_date
 from errors_validators import parse_user_date
 
 from .show import show_records_by_date
-from database import delete_record
+from db import delete_record
 
 @bot.message_handler(commands=['delete_record'])
 def handle_delete_record(message: Message) -> None:

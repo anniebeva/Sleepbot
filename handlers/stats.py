@@ -2,7 +2,7 @@ from bot import bot
 from telebot.types import Message
 from helpers import convert_duration, load_records_by_date, format_date_for_output
 from errors_validators import parse_user_date
-from database import show_full_stats
+from db import show_full_stats
 from .handlers_validators import record_not_found_error_bot, wrong_date_format_error_bot, return_to_start
 
 def show_records_by_date(message: Message) -> None:

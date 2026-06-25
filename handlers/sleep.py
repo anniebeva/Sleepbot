@@ -2,7 +2,7 @@ from bot import bot, user_sessions
 from telebot.types import Message
 import datetime
 
-from database import add_sleep_record
+from db import add_sleep_record
 from .handlers_validators import return_to_start, validate_num_input_bot
 
 
