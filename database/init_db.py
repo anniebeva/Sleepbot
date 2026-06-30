@@ -1,19 +1,16 @@
 from database.models import Base
 from database.connection import engine
-from db import get_connection   # используем старую функцию из db.py для сырых SQL-запросов
+from db import get_connection   
 
 def init_db():
-    # 1. Создаём таблицы через ORM
     Base.metadata.create_all(engine)
 
-    # 2. Создаём SQL-функции (сырым SQL через старое соединение)
     conn = get_connection()
     if not conn:
         print("❌ Не удалось подключиться к БД для создания функций")
         return
     try:
         with conn.cursor() as cur:
-            # Ваши функции (замените на свои, если отличаются)
             cur.execute("""
                 CREATE OR REPLACE FUNCTION get_records_by_date(p_user_id BIGINT, p_date DATE)
                 RETURNS TABLE(record_id INTEGER, sleep_time TIMESTAMP, wake_time TIMESTAMP, 
