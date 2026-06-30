@@ -11,7 +11,6 @@ import telebot
 from database.init_db import init_db
 from bot import bot
 
-# Импорт хендлеров (они используют тот же бот из bot.py)
 import handlers.start
 import handlers.edit
 import handlers.stats
@@ -21,19 +20,16 @@ import handlers.delete
 import handlers.sleep
 import handlers.fallback
 
-# --- Переменные окружения ---
 TOKEN = os.getenv('TELEGRAM_API_KEY')
 if not TOKEN:
     raise ValueError("❌ TELEGRAM_API_KEY не задан")
 
 app = Flask(__name__)
 
-# --- Создание таблиц и функций БД при старте ---
 logging.info("Инициализация базы данных...")
 init_db()
 logging.info("✅ База данных инициализирована")
 
-# --- Вебхук (точка входа для Telegram) ---
 @app.route('/' + TOKEN, methods=['POST'])
 def webhook():
     """
@@ -67,7 +63,6 @@ def set_webhook():
     logging.info(f"✅ Вебхук установлен: {webhook_url}")
     return True
 
-# --- Точка входа ---
 if __name__ == '__main__':
     use_webhook = os.getenv('USE_WEBHOOK', 'false').lower() == 'true'
     if use_webhook:
@@ -78,5 +73,5 @@ if __name__ == '__main__':
     else:
         # Режим локальной разработки: поллинг с предварительным удалением вебхука
         logging.info("Запускаем polling (локально)")
-        bot.delete_webhook()  # удаляем вебхук, если он был установлен ранее
+        bot.delete_webhook()  
         bot.polling(none_stop=True)
